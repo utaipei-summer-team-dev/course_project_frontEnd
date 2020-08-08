@@ -1,0 +1,12 @@
+@import 'base/basic';
+@import 'components/header';
+@import 'pages/home';
+@import 'pages/courses';
+@import 'utils/mixin';
+@import 'utils/variables';
+@import 'components/courseCard';
+
+
+// bootstrap-vue
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/bootstrap-vue/src/index.scss';

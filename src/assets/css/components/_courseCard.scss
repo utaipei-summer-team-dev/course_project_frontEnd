@@ -1,0 +1,46 @@
+@import 'utils/mixin';
+@import 'utils/variables';
+ 
+.couses{
+    @include flexcenter;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 25%;
+    .filter{
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+        margin: 12px 0;
+        button{
+            background: $gradient;
+            padding: 0;
+            border: none;
+        }
+    }
+    .course-list{
+        width: 100%;
+        .card{
+            width: 100%;
+            margin-bottom: 6px;
+        }
+        .ratings {
+            position: relative;
+            vertical-align: middle;
+            display: inline-block;
+            color: #ddd; /*背景星星顏色*/
+            overflow: hidden;
+            font-size: 10px; /*調整字體大小可放大縮小星星*/
+            text-shadow: 0px 1px 0 #999;
+        }
+            .full_star {
+            // width: 90%; /*調整寬度可變更星等*/
+            position: absolute;
+            left: 0;
+            top: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            color: #D56A16; /*前景星星顏色*/
+        }
+    }
+ }

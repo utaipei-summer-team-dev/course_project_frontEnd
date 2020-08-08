@@ -1,0 +1,19 @@
+@mixin size($w,$h:$w){
+  width: $w;
+  height: $h;
+}
+
+@mixin ab_center{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+// 置中對齊
+@mixin flexcenter{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+
