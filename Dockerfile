@@ -4,7 +4,7 @@ COPY package*.json ./
 RUN npm cache clean --force
 RUN npm install
 COPY ./ .
-EXPOSE 3000
+EXPOSE 80
 CMD ["npm", "run", "build"]
 
 # FROM node:12.16.0-alpine as build-stage
