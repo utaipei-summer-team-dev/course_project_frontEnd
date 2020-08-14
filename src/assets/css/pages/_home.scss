@@ -1,74 +1,317 @@
 @import 'utils/mixin';
 @import 'utils/variables';
 
-.home{
-    @include flexcenter;
-    flex-direction: column;
+.home {
+    // max-width: 768px;
     margin: 0 auto;
-    width: 25%;
-    .search{
-        margin-top: -22px;
-        width: 100%;
-    }
-    .hotkeys{
-        margin-top: 10px;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        list-style-type: none;
-        padding: 0;
-        li{
-            background: $gradient;
-            padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    .banner{
+        max-width: 100%;
+        height: auto;
+        background: linear-gradient(180deg, #27C6D0 -2.43%, #6F7BDF 100%);
+        img {
+            max-width: 100%;
+            height: auto;
+            @media (max-width: 768px){
+                margin-left: auto;
+                margin-right: auto;
+            }
         }
     }
-    .title{
-        margin-top: 20px;
-        margin-bottom: 6px;
-    }
-    .scrolling-wrapper {
-        width: 100%;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        white-space: nowrap;
-        .card {
-          display: inline-block;
-          @include size(200px,150px)
-          margin-right: 6px;
-        }
-    }
-    .scrolling-wrapper-flexbox {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        .card {
-          flex: 0 0 auto;
-        }
-    }
-    .scrolling-wrapper {
-        -webkit-overflow-scrolling: touch;
-    }
-    .scrolling-wrapper {
-        &::-webkit-scrollbar {
-          display: none;
-        }
-    }
-    .ratings {
+    .container {
         position: relative;
-        vertical-align: middle;
-        display: inline-block;
-        color: #ddd; /*背景星星顏色*/
-        overflow: hidden;
-        font-size: 10px; /*調整字體大小可放大縮小星星*/
-        text-shadow: 0px 1px 0 #999;
+        background-color: #fff;
+        margin-top: 34px;
+        max-width: 768px;
+        padding: 0;
+        .search {
+            width: 487px;
+            height: 40px;
+            left: 141px;
+            top: 354px;
+            border-radius: 50px;
+            border-image: linear-gradient(90deg, #27C6D0 -2.43%, #6F7BDF 100%);
+            border-image-slice: 1;
+            @media (max-width: 600px){
+                width: 87.5%;
+            }
+        }
+        .hotkeys {
+            font-family: Noto Sans TC;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 13px;
+            line-height: 22px;
+            display: flex;
+            justify-content: center;
+            letter-spacing: -0.408px;
+            color: #6E6E6E;
+            list-style-type: none;
+            margin-top: 10px;
+            margin-bottom: 0;
+            padding-inline-start: 0px;
+            .keyword {
+                padding: 6px 5px;
+                margin-right: 12px;
+                // width: 46px;
+                height: 22px;
+                background: #14BAC5;
+                border-radius: 25px;
+                font-family: Noto Sans TC;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 10px;
+                letter-spacing: -0.408px;
+                color: #FFFFFF;
+            }
+        }
+        .course_class {
+            display: flex;
+            flex-direction: column;
+            padding: 37px 80px 94px 80px;
+            @media (max-width: 768px){ // 768px 以下平板左右外距會剩50px
+                padding: 37px 50px 94px 50px;
+            }
+            @media (max-width: 600px){
+                padding: 37px 0px 94px 20px;
+            }
+            .title {
+                font-family: Noto Sans TC;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 26px;
+                color: #000000;
+                display: flex;
+                margin-left: 4px;
+            }
+            .scrolling-wrapper {
+                width: 100%;
+                height: 106px;
+                overflow-x: scroll; // 平板手機版適用
+                overflow-y: hidden; // 平板手機版適用
+                white-space: nowrap;
+                margin-bottom: 20px;
+                .card {
+                    display: inline-block;
+                    @include size(135px,96px)
+                    margin-right: 15px;
+                    box-shadow: 2px 2px 5px 2px rgba(156, 156, 156, 0.15);
+                    border-radius: 10px;
+                    .card-body {
+                        padding: 17px 20px;
+                        display: flex;
+                        flex-direction: column;
+                        flex-flow: wrap;
+                        .card-title {
+                            font-family: Noto Sans TC;
+                            font-style: normal;
+                            font-weight: bold;
+                            font-size: 14px;
+                            line-height: 10px;
+                            letter-spacing: -0.408px;
+                            color: #000000;
+                        }
+                        .card-text {
+                            margin: 0;
+                            .text-muted {
+                                font-family: Noto Sans TC;
+                                font-style: normal;
+                                font-weight: normal;
+                                font-size: 12px;
+                                line-height: 12px;
+                                letter-spacing: -0.408px;
+                                color: rgba(110, 110, 110, 0.8);
+                                margin-top: 15px;
+                                margin-bottom: 0;
+                            }
+                        }
+                        .value {
+                            display: flex;
+                            .star_value {
+                                font-family: Noto Sans TC;
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 11px;
+                                line-height: 18px;
+                                letter-spacing: -0.408px;
+                                color: #FAC12D;
+                                margin-bottom: 0;
+                                margin-right: 5px;
+                            }
+                            .no_value {
+                                font-family: Noto Sans TC;
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 12px;
+                                line-height: 12px;
+                                letter-spacing: -0.408px;
+                                color: #ACACAC;
+                                margin-top: 8px;
+                            }
+                            .ratings {
+                                // margin-top: 0;
+                                position: relative;
+                                vertical-align: middle;
+                                display: inline-block;
+                                color: #ddd; /*背景星星顏色*/
+                                overflow: hidden;
+                                font-size: 11px; /*調整字體大小可放大縮小星星*/
+                                // text-shadow: 0px 1px 0 #999;
+                                .full_star {
+                                // width: 90%; /*調整寬度可變更星等*/
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                color: #FAC12D; /*前景星星顏色*/
+                                }
+                            }
+                        }
+                        
+                    } 
+                }
+            }
+            .scrolling-wrapper-flexbox {
+                display: flex;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                .card {
+                    flex: 0 0 auto;
+                }
+            }
+            .scrolling-wrapper {
+                -webkit-overflow-scrolling: touch;
+            }
+            .scrolling-wrapper {
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+        }
+        .new_course {
+            position: absolute;
+            right: 52px;
+            bottom: 53px;
+            width: 118px;
+            height: 41px;
+            background: linear-gradient(90deg, #27C6D0 -2.43%, #6F7BDF 100%);
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.15);
+            border-radius: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            p {
+                font-family: Noto Sans TC;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 15px;
+                line-height: 15px;
+                letter-spacing: -0.408px;
+                color: #FFFFFF;
+                margin-bottom: 0;
+            }
+        }
     }
-        .full_star {
-        // width: 90%; /*調整寬度可變更星等*/
-        position: absolute;
-        left: 0;
-        top: 0;
-        white-space: nowrap;
-        overflow: hidden;
-        color: #D56A16; /*前景星星顏色*/
+    footer {
+        p {
+            font-family: Noto Sans TC;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 10px;
+            letter-spacing: -0.408px;
+            color: #6E6E6E;
+        }
+        .footer_bar {
+            margin-top: 16px;
+            height: 5px;
+            width: 100%;
+            background-color: #14BAC5;;
+        }
     }
 }
+// .home{
+//     // @include flexcenter;
+//     flex-direction: column;
+//     margin: 0 auto;
+//     width: 80%;
+//     .search{
+//         margin-top: -22px;
+//         width: 100%;
+//     }
+//     .hotkeys{
+//         margin-top: 10px;
+//         width: 100%;
+//         display: flex;
+//         // justify-content: space-between;
+//         list-style-type: none;
+//         padding: 0;
+//         li{
+//             // background: $gradient;
+//             padding: 5px;
+//         }
+//     }
+//     .title{
+//         margin-top: 20px;
+//         margin-bottom: 6px;
+//         font-family: Noto Sans TC;
+//         font-style: normal;
+//         font-weight: normal;
+//         font-size: 18px;
+//         line-height: 26px;
+//     }
+//     .course_class {
+//         display: flex;
+//         flex-direction: column;
+//         // justify-content: start;
+//     }
+//     .scrolling-wrapper {
+//         width: 100%;
+//         overflow-x: scroll;
+//         overflow-y: hidden;
+//         white-space: nowrap;
+//         .card {
+//           display: inline-block;
+//           @include size(200px,150px)
+//           margin-right: 6px;
+//         }
+//     }
+//     .scrolling-wrapper-flexbox {
+//         display: flex;
+//         flex-wrap: nowrap;
+//         overflow-x: auto;
+//         .card {
+//           flex: 0 0 auto;
+//         }
+//     }
+//     .scrolling-wrapper {
+//         -webkit-overflow-scrolling: touch;
+//     }
+//     .scrolling-wrapper {
+//         &::-webkit-scrollbar {
+//           display: none;
+//         }
+//     }
+//     .ratings {
+//         position: relative;
+//         vertical-align: middle;
+//         display: inline-block;
+//         color: #ddd; /*背景星星顏色*/
+//         overflow: hidden;
+//         font-size: 10px; /*調整字體大小可放大縮小星星*/
+//         text-shadow: 0px 1px 0 #999;
+//     }
+//         .full_star {
+//         // width: 90%; /*調整寬度可變更星等*/
+//         position: absolute;
+//         left: 0;
+//         top: 0;
+//         white-space: nowrap;
+//         overflow: hidden;
+//         color: #D56A16; /*前景星星顏色*/
+//     }
+// }

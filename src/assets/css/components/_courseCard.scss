@@ -1,46 +1,184 @@
 @import 'utils/mixin';
 @import 'utils/variables';
  
-.couses{
-    @include flexcenter;
-    flex-direction: column;
+.courses{
     margin: 0 auto;
-    width: 25%;
-    .filter{
-        width: 50%;
-        display: flex;
-        justify-content: space-between;
-        list-style-type: none;
-        margin: 12px 0;
-        button{
-            background: $gradient;
-            padding: 0;
-            border: none;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #F9F9F9;
+    .search_bar {
+        background-color: #F9F9F9;
+        .search {
+            margin-top: 49px;
+            margin-bottom: 75px;
+            width: 487px;
+            height: 40px;
+            left: 141px;
+            top: 354px;
+            border-radius: 50px;
+            border-image: linear-gradient(90deg, #27C6D0 -2.43%, #6F7BDF 100%);
+            border-image-slice: 1;
+            @media (max-width: 600px){
+                width: 87.5%;
+            }
         }
     }
+    // .filter{
+    //     width: 50%;
+    //     display: flex;
+    //     justify-content: space-between;
+    //     list-style-type: none;
+    //     margin: 12px 0;
+    //     button{
+    //         background: $gradient;
+    //         padding: 0;
+    //         border: none;
+    //     }
+    // }
     .course-list{
-        width: 100%;
+        position: relative;
+        max-width: 768px;
+        margin: 0 auto;
+        padding-bottom: 94px;
+        @media (max-width: 600px){
+            
+        }
         .card{
-            width: 100%;
-            margin-bottom: 6px;
-        }
-        .ratings {
             position: relative;
-            vertical-align: middle;
-            display: inline-block;
-            color: #ddd; /*背景星星顏色*/
-            overflow: hidden;
-            font-size: 10px; /*調整字體大小可放大縮小星星*/
-            text-shadow: 0px 1px 0 #999;
+            margin: 0 auto;
+            width: 88.8%;
+            margin-bottom: 6px;
+            border-radius: 10px;
+            background-color: #FFFFFF;
+            box-shadow: 2px 2px 5px 2px rgba(156, 156, 156, 0.15);
         }
-            .full_star {
-            // width: 90%; /*調整寬度可變更星等*/
-            position: absolute;
-            left: 0;
-            top: 0;
-            white-space: nowrap;
-            overflow: hidden;
-            color: #D56A16; /*前景星星顏色*/
+        .card-body {
+            padding: 31px 0px 28px 34px;
+            display: flex;
+            flex-direction: column;
+            width: 33%;
+            @media (max-width: 600px){
+                width: 50%;
+            }
+            .see-more {
+                position: absolute;
+                top: 48px;
+                bottom: 49px;
+                right: 42px;
+            }
+            .card-content {
+                display: flex;
+                align-items: center;
+                margin-bottom: 16px;
+            }
+            .card-title {
+                font-family: Noto Sans TC;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 14px;
+                letter-spacing: -0.408px;
+                color: #000000;
+                margin-right: 13px;
+                margin-bottom: 0;
+            }
+            .card-text {
+                margin: 0;
+                .text-muted {
+                    font-family: Noto Sans TC;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 12px;
+                    line-height: 12px;
+                    letter-spacing: -0.408px;
+                    color: rgba(110, 110, 110, 0.8);
+                    margin-top: 15px;
+                    margin-bottom: 0;
+                }
+            }
+            .value {
+                display: flex;
+                .star_value {
+                    font-family: Noto Sans TC;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 11px;
+                    line-height: 18px;
+                    letter-spacing: -0.408px;
+                    color: #FAC12D;
+                    margin-bottom: 0;
+                    margin-right: 5px;
+                }
+                .no_value {
+                    font-family: Noto Sans TC;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 12px;
+                    letter-spacing: -0.408px;
+                    color: #ACACAC;
+                    margin-top: 8px;
+                }
+                .ratings {
+                    // margin-top: 0;
+                    position: relative;
+                    vertical-align: middle;
+                    display: inline-block;
+                    color: #ddd; /*背景星星顏色*/
+                    overflow: hidden;
+                    font-size: 11px; /*調整字體大小可放大縮小星星*/
+                    // text-shadow: 0px 1px 0 #999;
+                    .full_star {
+                    // width: 90%; /*調整寬度可變更星等*/
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    color: #FAC12D; /*前景星星顏色*/
+                    }
+                }
+            }
+        }
+        .new_course {
+            position: fixed;
+            right: 16%;
+            bottom: 53px;
+            width: 118px;
+            height: 41px;
+            background: linear-gradient(90deg, #27C6D0 -2.43%, #6F7BDF 100%);
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.15);
+            border-radius: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            p {
+                font-family: Noto Sans TC;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 15px;
+                line-height: 15px;
+                letter-spacing: -0.408px;
+                color: #FFFFFF;
+                margin-bottom: 0;
+            }
+        }
+    }
+    footer {
+        p {
+            font-family: Noto Sans TC;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 10px;
+            letter-spacing: -0.408px;
+            color: #6E6E6E;
+        }
+        .footer_bar {
+            margin-top: 16px;
+            height: 5px;
+            width: 100%;
+            background-color: #14BAC5;;
         }
     }
  }

@@ -1,0 +1,160 @@
+@import 'utils/mixin';
+@import 'utils/variables';
+
+.evaluation {
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+    .banner{
+        max-width: 100%;
+        height: auto;
+        background: linear-gradient(180deg, #27C6D0 -2.43%, #6F7BDF 100%);
+        img {
+            max-width: 100%;
+            height: auto;
+            @media (max-width: 768px){
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+    .evaluation-container {
+        width: 90%;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 0;
+        .card {
+            max-width: 768px;  
+            margin: 0 auto;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            margin-bottom: 25px;
+            margin-top: 33px;
+            .card-title {
+                font-family: Noto Sans TC;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 20px;
+                line-height: 22px;
+                color: #4F4F4F;
+                margin-bottom: 20px;
+            }
+            .card-text {
+                margin: 0;
+            }
+            .text-muted {
+                font-family: Noto Sans TC;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 22px;
+                color: #4F4F4F;
+                margin-bottom: 11px;
+            }
+            .value {
+                display: flex;
+                justify-content: center;
+                .star_value {
+                    font-family: Noto Sans TC;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 11px;
+                    line-height: 18px;
+                    letter-spacing: -0.408px;
+                    color: #FAC12D;
+                }
+                .ratings {
+                    // margin-top: 0;
+                    position: relative;
+                    vertical-align: middle;
+                    display: inline-block;
+                    color: #ddd; /*背景星星顏色*/
+                    overflow: hidden;
+                    font-size: 11px; /*調整字體大小可放大縮小星星*/
+                    // text-shadow: 0px 1px 0 #999;
+                    .full_star {
+                    // width: 90%; /*調整寬度可變更星等*/
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    color: #FAC12D; /*前景星星顏色*/
+                    }
+                }
+            }
+        }
+        .list {
+            max-width: 768px;
+            margin: 0 auto;
+            .data {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                .floor {
+                    font-family: Noto Sans TC;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 12px;
+                    line-height: 22px;
+                    color: #BABABA;
+                    margin-bottom: 6px;
+                }
+                .string {
+                    text-align: left;
+                    font-family: Noto Sans TC;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 24px;
+                    color: #4F4F4F;
+                    margin-bottom: 10px;
+                }
+                .time {
+                    font-family: Noto Sans TC;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 12px;
+                    line-height: 22px;
+                    color: #BABABA;
+                    align-self: flex-end;
+                }
+                .value {
+                    display: flex;
+                    margin-top: 0;
+                    .star_value {
+                        font-family: Noto Sans TC;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 11px;
+                        line-height: 18px;
+                        letter-spacing: -0.408px;
+                        color: #FAC12D;
+                        margin-bottom: 0;
+                        margin-right: 5px;
+                    }
+                    .ratings {
+                        // margin-top: 0;
+                        position: relative;
+                        vertical-align: middle;
+                        display: inline-block;
+                        color: #ddd; /*背景星星顏色*/
+                        overflow: hidden;
+                        font-size: 11px; /*調整字體大小可放大縮小星星*/
+                        // text-shadow: 0px 1px 0 #999;
+                        .full_star {
+                        // width: 90%; /*調整寬度可變更星等*/
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        color: #FAC12D; /*前景星星顏色*/
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

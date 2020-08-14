@@ -19,6 +19,10 @@ const routes = [
     path: '/courses',
     component: () => import('../views/courses.vue'),
   },
+  {
+    path: '/evaluationList',
+    component: () => import('../views/evaluationList.vue'),
+  },
   // {
   //   path: '/admin',
   //   component: () => import('../views/dashboard/dashboard.vue'),
