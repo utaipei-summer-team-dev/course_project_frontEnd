@@ -5,7 +5,7 @@ RUN npm cache clean --force
 RUN npm install
 COPY ./ .
 EXPOSE 80
-CMD ["npm", "run", "build"]
+CMD ["npm", "run", "serve"]
 
 # FROM node:12.16.0-alpine as build-stage
 # WORKDIR /app
