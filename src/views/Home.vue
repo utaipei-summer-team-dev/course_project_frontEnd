@@ -245,9 +245,9 @@
           </div>
         </div>
       </div>
-      <div class="new_course">
+      <!-- <div class="new_course">
         <p>新增課程</p>
-      </div>
+      </div> -->
     </div>
     <footer>
         <p>made by utaipei student. 2020</p>
