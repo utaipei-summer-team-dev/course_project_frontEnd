@@ -19,19 +19,22 @@
                     <h5 class="card-title">電影賞析</h5>
                     <p class="card-text"><small class="text-muted">白偉毅 老師</small></p>
                     <div class="value">
-                        <p class='star_value'>4.0</p>
+                        <p class='star_value'></p>
                         <div class="ratings">
                             <div class="empty_star">★★★★★</div>
-                            <div class="full_star" style="width: 80%">★★★★★</div>
+                            <div class="full_star" style="width: 0%">★★★★★</div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="no_eva">
+                <p>尚無回應<br>到右下方新增一筆評價吧!</p>
+                <img src="../assets/img/empty.png" alt="">
+            </div>
             <div class="list">
-                <div class="data"   v-for="(item, index) in course" :key="item.id">
+                <!-- <div class="data"   v-for="(item, index) in course" :key="item.id">
                     <p class="floor">{{index + 1 + 'F'}}</p>
                     <div class="value">
-                        <!-- <p class='star_value'>{{item.rank}}</p> -->
                         <div class="ratings">
                             <div class="empty_star">★★★★★</div>
                             <div class="full_star" v-bind:style="{width: item.rank * 20 + '%'}">★★★★★</div>
@@ -39,7 +42,7 @@
                     </div>
                     <p class="string">{{item.contentString}}</p>
                     <p class="time">{{item.createDate}}</p>
-                </div>
+                </div> -->
                 <router-link to="/newEvaluation">
                     <div class="new_evaluation">
                         <img src="../assets/img/newEvaluation.png" alt="">
@@ -50,22 +53,3 @@
         </div>
     </div>
 </template>
-
-<script>
-export default {
-  name: 'evaluation',
-  data() {
-    return {
-      course: [],
-    };
-  },
-    created() {
-        const url = `http://163.21.235.164:8080/evaluationList/0`;
-        this.$http.get(url)
-        .then((res) => {
-            console.log(res);
-            this.course = res.data;
-        });
-    },
-};
-</script>

@@ -23,6 +23,18 @@ const routes = [
     path: '/evaluationList',
     component: () => import('../views/evaluationList.vue'),
   },
+  {
+    path: '/newCourse',
+    component: () => import('../views/newCourse.vue'),
+  },
+  {
+    path: '/newEvaluation',
+    component: () => import('../views/newEvaluation.vue'),
+  },
+  {
+    path: '/empty',
+    component: () => import('../views/empty.vue'),
+  },
   // {
   //   path: '/admin',
   //   component: () => import('../views/dashboard/dashboard.vue'),

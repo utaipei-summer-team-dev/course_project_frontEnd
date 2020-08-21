@@ -2,9 +2,30 @@
 @import 'utils/variables';
 
 .evaluation {
+    position: relative;
     margin: 0 auto;
     width: 100%;
     box-sizing: border-box;
+    @media (max-width: 800px){
+        position: relative;
+    }
+    .nav{
+        z-index: 4;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        padding: 27.5px 59px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .overlay {
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100px;
+        background: rgba(0, 0, 0, 0.3);
+    }
     .banner{
         max-width: 100%;
         height: auto;
@@ -12,17 +33,26 @@
         img {
             max-width: 100%;
             height: auto;
-            @media (max-width: 768px){
+            @media (max-width: 800px){
                 margin-left: auto;
-                margin-right: auto;
+                margin-right: auto; 
             }
         }
     }
     .evaluation-container {
-        width: 90%;
+        z-index: 5;
+        width: 100%;
         margin: 0 auto;
-        background-color: #ffffff;
-        padding: 0;
+        background-color: #fff;
+        padding: 0 5%;
+        position: absolute;
+        top: 74.5px;
+        @media (max-width:800px){
+            // margin-top: -74.5px;
+            border: 2px solid #fff;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+        }
         .card {
             max-width: 768px;  
             margin: 0 auto;
@@ -31,6 +61,10 @@
             border-right: none;
             margin-bottom: 25px;
             margin-top: 33px;
+            border-radius: 0;
+            @media (max-width: 800px) {
+                border: none;
+            }
             .card-title {
                 font-family: Noto Sans TC;
                 font-style: normal;
@@ -88,6 +122,35 @@
         .list {
             max-width: 768px;
             margin: 0 auto;
+            .new_evaluation {
+                position: fixed;
+                right: 20%;
+                bottom: 53px;
+                width: 56px;
+                height: 56px;
+                background: linear-gradient(90deg, #27C6D0 -2.43%, #6F7BDF 100%);
+                box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.15);
+                border-radius: 25px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                @media (max-width:800px){
+                    right: 53px;
+                }
+                img {
+                    margin: 0 auto;
+                }
+                p {
+                    font-family: Noto Sans TC;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 15px;
+                    line-height: 15px;
+                    letter-spacing: -0.408px;
+                    color: #FFFFFF;
+                    margin-bottom: 0;
+                }
+            }
             .data {
                 display: flex;
                 flex-direction: column;

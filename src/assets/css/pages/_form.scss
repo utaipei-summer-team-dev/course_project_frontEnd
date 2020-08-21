@@ -1,0 +1,193 @@
+.form {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+    @media (max-width: 800px){
+        position: relative;
+    }
+    .nav{
+        z-index: 4;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        padding: 27.5px 59px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .overlay {
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100px;
+        background: rgba(0, 0, 0, 0.3);
+    }
+    .banner{
+        max-width: 100%;
+        height: auto;
+        background: linear-gradient(180deg, #27C6D0 -2.43%, #6F7BDF 100%);
+        img {
+            max-width: 100%;
+            height: auto;
+            @media (max-width: 800px){
+                margin-left: auto;
+                margin-right: auto; 
+            }
+        }
+    }
+    .form_container {
+        z-index: 5;
+        width: 100%;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 0 5%;
+        position: absolute;
+        top: 74.5px;
+        @media (max-width:800px){
+            // margin-top: -74.5px;
+            border: 2px solid #fff;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+        }
+        h5 {
+            text-align: left;
+            font-family: Noto Sans TC;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 24px;
+            color: #4F4F4F;
+            margin: 0;
+        }
+        span {
+            font-family: Noto Sans TC;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 24px;
+            color: #4F4F4F;
+
+        }
+        .class_name, .teacher_name, .eva_rank, .content {
+            width: 457px;
+            margin: 0 auto;
+        }
+        .class_name {
+            margin-top: 41px;
+            margin-bottom: 26px;
+        }
+        .teacher_name {
+            margin-bottom: 50%;
+        }
+        .input {
+            width: 457px;
+            height: 32px;
+            border: 1px solid #14BAC5;
+            box-sizing: border-box;
+            border-radius: 20px;
+            margin-top: 9px;
+        }
+        .btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .go {
+            width: 266px;
+            height: 38px;
+            margin-bottom: 18px;
+            background: linear-gradient(90deg, #27C6D0 -2.43%, #6F7BDF 100%);
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.15);
+            border-radius: 25px;
+            border: none;
+            font-family: Noto Sans TC;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 10px;
+            letter-spacing: -0.408px;
+            color: #FFFFFF;
+
+        }
+        .no {
+            margin-bottom: 100px;
+            font-family: Noto Sans TC;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 20px;
+            color: #9C9C9C;
+            border: none;
+            background-color: #fff;
+        }
+        .eva_rank {
+            margin-top: 41px;
+            margin-bottom: 14px;
+        }
+        .ps {
+            font-family: Noto Sans TC;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 24px;
+            color: #C4C4C4;
+            text-align: left;
+            margin: 0;
+        }
+        .content {
+            margin-bottom: 20%;
+            // text-align: top;
+        }
+        .eva_content {
+            width: 457px;
+            height: 373px;
+            font-family: Noto Sans TC;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 20px;
+            color: #C4C4C4;
+            border: none;
+            background-color: #fff;
+            border: 2px solid #14BAC5;
+            box-sizing: border-box;
+            border-radius: 20px;
+            margin-top: 9px;
+            padding-top: 12px;
+            padding-left: 15px;
+        }
+        .value {
+            display: flex;
+            margin-top: 0;
+            .star_value {
+                font-family: Noto Sans TC;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 11px;
+                line-height: 18px;
+                letter-spacing: -0.408px;
+                color: #FAC12D;
+                margin-bottom: 0;
+                margin-right: 5px;
+            }
+            .ratings {
+                // margin-top: 0;
+                position: relative;
+                vertical-align: middle;
+                display: inline-block;
+                color: #D7D7D7;
+                overflow: hidden;
+                font-size: 24px;
+                .full_star {
+                position: absolute;
+                left: 0;
+                top: 0;
+                white-space: nowrap;
+                overflow: hidden;
+                color: #FAC12D; /*前景星星顏色*/
+                }
+            }
+        }
+    }
+}

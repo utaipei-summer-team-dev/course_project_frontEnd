@@ -6,6 +6,9 @@
     margin: 0 auto;
     width: 100%;
     box-sizing: border-box;
+    // @media (max-width:800px){
+    //     position: relative;
+    // }
     .banner{
         max-width: 100%;
         height: auto;
@@ -20,22 +23,39 @@
         }
     }
     .container {
-        position: relative;
+        position: absolute;
         background-color: #fff;
-        margin-top: 34px;
+        padding-top: 34px;
         max-width: 768px;
-        padding: 0;
+        // padding: 0;
+        @media (max-width:800px){
+            // position: absolute;
+            // top: 250px;
+            margin-top: -20px;
+            border: 2px solid #fff;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+        }
         .search {
             width: 487px;
             height: 40px;
             left: 141px;
             top: 354px;
             border-radius: 50px;
-            border-image: linear-gradient(90deg, #27C6D0 -2.43%, #6F7BDF 100%);
-            border-image-slice: 1;
+            padding-left: 47px;
+            background: 
+                linear-gradient(#fff,#fff) padding-box, 
+                linear-gradient(to right, #27c6d0 -2.43%, #6f7bdf) border-box;
+            border-color: transparent;
             @media (max-width: 600px){
                 width: 87.5%;
             }
+            // ::before {
+            //     content: '';
+            //     position: absolute;
+            //     left: 17px;
+            //     background-image: url(/Users/kuo/github/course_project/src/assets/img/search.png);
+            // }
         }
         .hotkeys {
             font-family: Noto Sans TC;
@@ -101,35 +121,39 @@
                     box-shadow: 2px 2px 5px 2px rgba(156, 156, 156, 0.15);
                     border-radius: 10px;
                     .card-body {
-                        padding: 17px 20px;
+                        padding: 17px 10px;
                         display: flex;
-                        flex-direction: column;
-                        flex-flow: wrap;
+                        flex-flow: column;
+                        align-items: start;
                         .card-title {
                             font-family: Noto Sans TC;
                             font-style: normal;
                             font-weight: bold;
                             font-size: 14px;
-                            line-height: 10px;
+                            line-height: 14px;
                             letter-spacing: -0.408px;
                             color: #000000;
+                            margin-bottom: 13px;
+                            max-width: 110px;
+                            overflow:hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
                         }
-                        .card-text {
+                        .text-muted {
                             margin: 0;
-                            .text-muted {
-                                font-family: Noto Sans TC;
-                                font-style: normal;
-                                font-weight: normal;
-                                font-size: 12px;
-                                line-height: 12px;
-                                letter-spacing: -0.408px;
-                                color: rgba(110, 110, 110, 0.8);
-                                margin-top: 15px;
-                                margin-bottom: 0;
-                            }
+                            font-family: Noto Sans TC;
+                            font-style: normal;
+                            font-weight: normal;
+                            font-size: 12px;
+                            line-height: 12px;
+                            letter-spacing: -0.408px;
+                            color: rgba(110, 110, 110, 0.8);
+                            margin-top: 0;
+                            margin-bottom: 8px;
                         }
                         .value {
                             display: flex;
+                            margin-top: 0;
                             .star_value {
                                 font-family: Noto Sans TC;
                                 font-style: normal;
@@ -217,101 +241,23 @@
         }
     }
     footer {
-        p {
-            font-family: Noto Sans TC;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 12px;
-            line-height: 10px;
-            letter-spacing: -0.408px;
-            color: #6E6E6E;
-        }
-        .footer_bar {
-            margin-top: 16px;
-            height: 5px;
-            width: 100%;
-            background-color: #14BAC5;;
-        }
+    @media (max-width:800px){
+        bottom: 20px;
+    }
+    p {
+        font-family: Noto Sans TC;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 10px;
+        letter-spacing: -0.408px;
+        color: #6E6E6E;
+    }
+    .footer_bar {
+        margin-top: 16px;
+        height: 5px;
+        width: 100%;
+        background-color: #14BAC5;;
     }
 }
-// .home{
-//     // @include flexcenter;
-//     flex-direction: column;
-//     margin: 0 auto;
-//     width: 80%;
-//     .search{
-//         margin-top: -22px;
-//         width: 100%;
-//     }
-//     .hotkeys{
-//         margin-top: 10px;
-//         width: 100%;
-//         display: flex;
-//         // justify-content: space-between;
-//         list-style-type: none;
-//         padding: 0;
-//         li{
-//             // background: $gradient;
-//             padding: 5px;
-//         }
-//     }
-//     .title{
-//         margin-top: 20px;
-//         margin-bottom: 6px;
-//         font-family: Noto Sans TC;
-//         font-style: normal;
-//         font-weight: normal;
-//         font-size: 18px;
-//         line-height: 26px;
-//     }
-//     .course_class {
-//         display: flex;
-//         flex-direction: column;
-//         // justify-content: start;
-//     }
-//     .scrolling-wrapper {
-//         width: 100%;
-//         overflow-x: scroll;
-//         overflow-y: hidden;
-//         white-space: nowrap;
-//         .card {
-//           display: inline-block;
-//           @include size(200px,150px)
-//           margin-right: 6px;
-//         }
-//     }
-//     .scrolling-wrapper-flexbox {
-//         display: flex;
-//         flex-wrap: nowrap;
-//         overflow-x: auto;
-//         .card {
-//           flex: 0 0 auto;
-//         }
-//     }
-//     .scrolling-wrapper {
-//         -webkit-overflow-scrolling: touch;
-//     }
-//     .scrolling-wrapper {
-//         &::-webkit-scrollbar {
-//           display: none;
-//         }
-//     }
-//     .ratings {
-//         position: relative;
-//         vertical-align: middle;
-//         display: inline-block;
-//         color: #ddd; /*背景星星顏色*/
-//         overflow: hidden;
-//         font-size: 10px; /*調整字體大小可放大縮小星星*/
-//         text-shadow: 0px 1px 0 #999;
-//     }
-//         .full_star {
-//         // width: 90%; /*調整寬度可變更星等*/
-//         position: absolute;
-//         left: 0;
-//         top: 0;
-//         white-space: nowrap;
-//         overflow: hidden;
-//         color: #D56A16; /*前景星星顏色*/
-//     }
-// }
+}
