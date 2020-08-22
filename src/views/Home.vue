@@ -5,7 +5,10 @@
       <img alt="banner" src="../assets/img/768banner.png">
     </div>
     <div class="container">
-      <input type="text" class="search" placeholder="在找什麼課嗎？">
+      <input type="text" v-model="search.key" class="search" placeholder="在找什麼課嗎？">
+      <router-link :to= "`/courses/${search.key}`">
+        <img class="searchicon" src="../assets/img/search.png" alt="">
+      </router-link>
       <ul class="hotkeys">大家都在找：
         <li class="keyword">白偉毅</li>
         <li class="keyword">書法課</li>
@@ -77,10 +80,18 @@ export default {
   data() {
     return {
       course: [],
+      search: {
+        key: '',
+      },
     };
   },
+  // methods: {
+  //     search(key) {
+  //     this.$router.push(`/courses/${key}`);
+  //   },
+  // },
   created() {
-    const url = `http://163.21.235.164:8080/courseList/0`;
+    const url = `http://163.21.235.164:8080/courseList/`;
     this.$http.get(url)
       .then((res) => {
         console.log(res);

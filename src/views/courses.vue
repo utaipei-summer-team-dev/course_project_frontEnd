@@ -5,7 +5,7 @@
             <router-link to="/#">   
                 <a class="pre" href=""><img src="../assets/img/pre.png" alt=""></a>
             </router-link>
-            <input type="text" class="search" placeholder="JAVA">
+            <input type="text" class="search" placeholder="">
             <div class="flowers">
                 <img class="flowers flower1" src="../assets/img/flower1.png" alt="">
                 <img class="flowers flower2" src="../assets/img/flower2.png" alt="">
@@ -22,20 +22,21 @@
                 <div class="card-body">
                     <div class="card-content">
                         <h5 class="card-title">{{item.courseName}}</h5>
-                        <p class="card-text"><small class="text-muted">{{item.teacherName}}</small></p>
+                        <p class="card-text"><small class="text-muted">{{item.teacherName}}  老師</small></p>
                     </div>
                     <div class="value">
-                        <p class='star_value'>4.0</p>
+                        <p class='star_value'>{{item.starLevel}}</p>
                         <div class="ratings">
                             <div class="empty_star">★★★★★</div>
-                            <div class="full_star" v-bind:style="{width: item.rank * 20 + '%'}">★★★★★</div>
+                            <div class="full_star" v-bind:style="{width: item.starLevel * 20 + '%'}">★★★★★</div>
                         </div>
                     </div>
-                    <router-link to="/evaluationList">
+                    <router-link :to= "`/evaluationList/${item.id}`">
                         <div class="see-more">
-                            <a href=""><img src="../assets/img/seemore.png" alt=""></a>
+                            <a href="" @click="getEva(item.pid)"><img src="../assets/img/seemore.png" alt=""></a>
                         </div>
                     </router-link>
+                    <!-- <button  class="see-more" type="button" @click="getEva(item.id)"><img src="../assets/img/seemore.png" alt=""></button> -->
                 </div>
             </div>
             <router-link to="/newCourse">
@@ -60,16 +61,33 @@ export default {
       course: [],
     };
   },
-  created() {
-    const url = `http://163.21.235.164:8080/courseList/0`;
-    this.$http.get(url)
-      .then((res) => {
-        console.log(res);
-        this.course = res.data;
-        // console.log(this.course);
-        // console.log(this.course.courseName);
-        // console.log(this.course.teacherName);
-      });
+  methods: {
+      getEva(id) {
+      this.$router.push(`/evaluationList/${id}`);
+    },
   },
+//   created() {
+//     const url = `http://163.21.235.164:8080/courseList/設`;
+//     this.$http.get(url)
+//       .then((res) => {
+//         console.log(res);
+//         this.course = res.data;
+        
+//         // console.log(this.course);
+//         // console.log(this.course.courseName);
+//         // console.log(this.course.teacherName);
+//       });
+//   },
+// };
+created() {
+        const { key } = this.$route.params;
+        const url = `http://163.21.235.164:8080/courseList/${key}`;
+        console.log(this.$route.params);
+        this.$http.get(url)
+        .then((res) => {
+            console.log(res);
+            this.course = res.data;
+        });
+    },
 };
 </script>

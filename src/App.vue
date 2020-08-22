@@ -3,8 +3,8 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <!-- <router-link to="/about">About</router-link> | -->
-      <router-link to="/courses">搜尋結果列表</router-link> |
-      <router-link to="/evaluationList">課程內頁</router-link> |
+      <!-- <router-link to="/courses">搜尋結果列表</router-link> |
+      <router-link to="/evaluationList">課程內頁</router-link> | -->
       <router-link to="/newCourse">新增課程</router-link> |
       <router-link to="/newEvaluation">新增評價</router-link> |
       <router-link to="/empty">尚無評價課程</router-link>

@@ -26,11 +26,11 @@
             </div>
             <div class="content">
                 <h5>說點什麼吧<span>（必填）</span></h5>
-                <textarea class="eva_content" placeholder="分享你對這堂課的感受或評價吧"></textarea>
+                <textarea v-model="eva.evastring" class="eva_content" placeholder="分享你對這堂課的感受或評價吧"></textarea>
             </div>
             <div class="btn">
                 <router-link to="/evaluationList">
-                    <button type="button" class="go">匿名送出</button>
+                    <button type="button" class="go" @click="sendeva">匿名送出</button>
                 </router-link>
                 <router-link to="/evaluationList">
                     <button type="button" class="no">取消</button>
@@ -39,3 +39,25 @@
         </div>
     </div>
 </template>
+
+<script>
+export default {
+  name: 'newevaluation',
+  data() {
+    return {
+      eva: {
+          evastring: 123,
+
+      },
+    };
+  },
+    created() {
+        const url = `http://163.21.235.164:8080/createEvaluation/:courseId`;
+        this.$http.post(url, this.eva)
+        .then((res) => {
+            console.log(res);
+            this.course = res.data;
+        });
+    },
+};
+</script>

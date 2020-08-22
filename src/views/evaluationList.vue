@@ -16,13 +16,13 @@
         <div class="evaluation-container">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">電影賞析</h5>
-                    <p class="card-text"><small class="text-muted">白偉毅 老師</small></p>
+                    <h5 class="card-title">{{courseData.courseName}}</h5>
+                    <p class="card-text"><small class="text-muted">{{courseData.teacherName}} 老師</small></p>
                     <div class="value">
-                        <p class='star_value'>4.0</p>
+                        <p class='star_value'>{{courseData.starLevel}}</p>
                         <div class="ratings">
                             <div class="empty_star">★★★★★</div>
-                            <div class="full_star" style="width: 80%">★★★★★</div>
+                            <div class="full_star" v-bind:style="{width: courseData.starLevel * 20 + '%'}">★★★★★</div>
                         </div>
                     </div>
                 </div>
@@ -53,18 +53,27 @@
 
 <script>
 export default {
-  name: 'evaluation',
-  data() {
-    return {
-      course: [],
-    };
-  },
+    name: 'evaluation',
+    data() {
+        return {
+        course: [],
+        courseData: {},
+        };  
+    },
     created() {
-        const url = `http://163.21.235.164:8080/evaluationList/0`;
+        const { id } = this.$route.params;
+        const url = `http://163.21.235.164:8080/evaluationList/${id}`;
+        console.log(this.$route.params);
         this.$http.get(url)
         .then((res) => {
             console.log(res);
             this.course = res.data;
+        });
+        const courseData = `http://163.21.235.164:8080/courseData/${id}`;
+        this.$http.get(courseData)
+        .then((res) => {
+            console.log(res);
+            this.courseData = res.data;
         });
     },
 };

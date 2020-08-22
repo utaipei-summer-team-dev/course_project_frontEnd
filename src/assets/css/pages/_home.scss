@@ -47,6 +47,7 @@
                 linear-gradient(#fff,#fff) padding-box, 
                 linear-gradient(to right, #27c6d0 -2.43%, #6f7bdf) border-box;
             border-color: transparent;
+            margin-right: 5px;
             @media (max-width: 600px){
                 width: 87.5%;
             }
@@ -56,6 +57,10 @@
             //     left: 17px;
             //     background-image: url(/Users/kuo/github/course_project/src/assets/img/search.png);
             // }
+        }
+        .searchicon {
+            width: 20px;
+            height: auto;
         }
         .hotkeys {
             font-family: Noto Sans TC;
@@ -241,23 +246,23 @@
         }
     }
     footer {
-    @media (max-width:800px){
-        bottom: 20px;
-    }
-    p {
-        font-family: Noto Sans TC;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 12px;
-        line-height: 10px;
-        letter-spacing: -0.408px;
-        color: #6E6E6E;
-    }
-    .footer_bar {
-        margin-top: 16px;
-        height: 5px;
-        width: 100%;
-        background-color: #14BAC5;;
-    }
-}
+        @media (max-width:800px){
+            bottom: 20px;
+        }
+        p {
+            font-family: Noto Sans TC;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 10px;
+            letter-spacing: -0.408px;
+            color: #6E6E6E;
+        }
+        .footer_bar {
+            margin-top: 16px;
+            height: 5px;
+            width: 100%;
+            background-color: #14BAC5;;
+        }
+    }   
 }

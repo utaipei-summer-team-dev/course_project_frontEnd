@@ -16,11 +16,11 @@ const routes = [
   //   component: () => import('../views/About.vue'),
   // },
   {
-    path: '/courses',
+    path: '/courses/:key',
     component: () => import('../views/courses.vue'),
   },
   {
-    path: '/evaluationList',
+    path: '/evaluationList/:id',
     component: () => import('../views/evaluationList.vue'),
   },
   {
